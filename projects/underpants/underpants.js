@@ -137,19 +137,17 @@ _.typeOf = function(value){
 */
 
 _.each = function(collection, func){
-    // determine if collection is array
-    if (Array.isArray(collection)) {
-        // iterate through collection using for loop
+    // determine if collection is an array
+    if (Array.isArray(collection)){
         for (var i = 0; i < collection.length; i++){
-            // pass current item in array, current index, and collection into func
             func(collection[i], i, collection);
         }
-    } else { // else it is object
-        for (let key in collection){
-            func(collection[key], key, collection);
+    } else { // else it's an object
+        for (var key in collection){
+            func(collection[key], key, collection)
         }
     }
-   
+    
 }
 
 /** _.unique
